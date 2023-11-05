@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import FaceRec from './components/Facerec/FaceRec'
+import Chatbot from './components/Chatbot/Chatbot';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from './components/Register/Register';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <BrowserRouter>
+  {/* <Navbar/> */}
+  <Routes>
+      {/* <Route  path="/" element={<FaceRec />} />
+      <Route path="/panel" element={<Register />} /> */}
+      <Route path="/chatbot" element={<Chatbot />} />
+      {/* <Route path="contact" element={<Contact />} />
+      <Route path="*" element={<NoPage />} /> */}
+  
+  </Routes>
+</BrowserRouter>
+  )
 }
 
 export default App;
