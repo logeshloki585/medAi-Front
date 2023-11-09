@@ -16,7 +16,6 @@ function Register() {
   const [capturing, setCapturing] = useState(true);
 
   const { parameter } = useParams();
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,6 +38,7 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(parameter.length<=30){
     const response = await axios.post('http://localhost:4000/register', {
       id: formData.name,
       content: formData,
@@ -47,12 +47,24 @@ function Register() {
     if (response.data.message === 'Data registered successfully'){
       window.location.replace('http://localhost:3000');
     }
-  };
+  }else{
+    const response = await axios.post('http://localhost:4000/register', {
+      id: parameter,
+      content: formData,
+      img: capturedImage,
+    });
+    if (response.data.message === 'Data registered successfully'){
+      window.location.replace('http://localhost:3000');
+    }
+  }
+};
 
   return (
     <div className="dark-theme">
       <form onSubmit={handleSubmit}>
-        <div className="webcam">
+        {
+          (parameter.length<=30)?
+          <div className="webcam">
           {capturing ? (
             <div>
               <Webcam
@@ -73,7 +85,9 @@ function Register() {
               </button>
             </div>
           )}
-        </div>
+        </div>:
+        <></>
+        }
 
         <div className="form-fields">
           <div className="form-field">

@@ -52,6 +52,9 @@
 
   .login button{
     background-color: brown;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
     font-size: 15px;
   }
   

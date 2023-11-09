@@ -43,7 +43,7 @@ const Chatbot = () => {
     setInputMessage('');
   
     try {
-      const res = await axios.post('http://localhost:5000/chat', { user: inputMessage });
+      const res = await axios.post('http://localhost:4000/chat', { user: inputMessage });
       const botResponse = res.data['bot'];
   
       // Delay the bot response to simulate typing
@@ -114,7 +114,8 @@ const Chatbot = () => {
     <div className="chatbot_body">
       <div className="chatbot-container">
       <div className="chatbox" ref={chatboxRef}>
-        <span className="message bot">Welcome {parameter}, how may I help you</span>
+        {user?<span className="message bot">Welcome {user}, how may I help you</span>:<></>}
+        
         {messages.map((message, index) => (
           <span
             key={index}

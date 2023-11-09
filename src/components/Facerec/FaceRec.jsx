@@ -71,7 +71,7 @@ const FaceVerification = () => {
     <div className="face-verification-container">
       <div className="login">
         <div>
-          <p>Connect through wallet</p>
+          <p>Connect through wallet ⛓🟠</p>
         </div>
         <div>
           <button onClick={requestAccount}>Login</button>
@@ -82,7 +82,7 @@ const FaceVerification = () => {
       </div>
       <div className='webCam'>
       <div>
-          <p>Connect through Face Authentication</p>
+          <p>Connect through Face Authentication📸🟩</p>
       </div>
       {capturedImage ? (
         <div className="image-preview">
