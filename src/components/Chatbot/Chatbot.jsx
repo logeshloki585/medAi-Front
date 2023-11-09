@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import './Chatbot.css';
 import axios from 'axios';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
+  const [user, setUser] = useState('');
   const [listening, setListening] = useState(false); // Track listening state
   const chatboxRef = useRef(null);
   const recognition = useRef(
@@ -12,8 +14,22 @@ const Chatbot = () => {
   );
   const synthesis = useRef(window.speechSynthesis);
 
+  const { parameter } = useParams();
+ 
   // Check if speech recognition is available
   const isSpeechRecognitionAvailable = recognition.current !== undefined;
+
+
+  useEffect(()=>{
+    const getValue = async () =>{
+      const response = await axios.get('http://localhost:4000/fetchdata/address/'+parameter);
+      setUser(response.data.data.name)
+      const str = "Welcome "+ response.data.data.name +", how may I help you"
+      console.log(str)
+      speak(str)
+    }
+    getValue() 
+  },[])
 
   const handleInputMessageChange = (e) => {
     setInputMessage(e.target.value);
@@ -98,7 +114,7 @@ const Chatbot = () => {
     <div className="chatbot_body">
       <div className="chatbot-container">
       <div className="chatbox" ref={chatboxRef}>
-        <span className="message bot">Welcome John, how may I help you</span>
+        <span className="message bot">Welcome {parameter}, how may I help you</span>
         {messages.map((message, index) => (
           <span
             key={index}

@@ -12,9 +12,9 @@ function App() {
   <BrowserRouter>
   {/* <Navbar/> */}
   <Routes>
-      {/* <Route  path="/" element={<FaceRec />} />
-      <Route path="/panel" element={<Register />} /> */}
-      <Route path="/chatbot" element={<Chatbot />} />
+      <Route  path="/" element={<FaceRec />} />
+      <Route path="/register/:parameter" element={<Register />} />
+      <Route path="/chatbot/:parameter" element={<Chatbot />} />
       {/* <Route path="contact" element={<Contact />} />
       <Route path="*" element={<NoPage />} /> */}
   

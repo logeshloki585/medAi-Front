@@ -3,13 +3,56 @@
 /* Styles for the container holding the webcam and verification status */
 .face-verification-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 87.5vh;
+    height: 100vh;
     background-color: #171717; /* Dark background color */
     color: #fff; /* Text color */
     font-family: Arial, sans-serif;
+  }
+
+  .webCam{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+
+  .login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 40%;
+  }
+
+  .login p{
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+  }
+
+  .webCam p{
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+  }
+
+  .line{
+    
+    width: 1px;
+    border: 0.6px solid rgba(255, 255, 255, 0.586);
+    height: 80vh;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
+  .login button{
+    background-color: brown;
+    font-size: 15px;
   }
   
   /* Style for the capture button */

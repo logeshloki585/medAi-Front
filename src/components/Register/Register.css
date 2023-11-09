@@ -1,58 +1,93 @@
 .dark-theme {
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Text color */
-    padding: 20px;
-    /* border-radius: 8px; */
-    height: 82.1vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #444;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    min-width: 500px; /* Adjust the maximum width as needed */
-    margin: 0 auto; 
-    margin-bottom: 50px;/* Center the form horizontally */
-  }
-  
+.webcam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 20px; */
+}
 
-  .form-field {
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
+.webcam_main{
+  margin-left: 40px;
+  width: 460px;
+}
 
-  input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    background-color: #444; /* Dark input background color */
-    color: #fff;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #007bff; /* Button background color */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    
-    width: 150px;
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Button background color on hover */
-  }
-  
+.capture-button, .recapture-button {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 40px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.recapture-button {
+  background-color: #ff0000; /* Change the recapture button color */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.form-field {
+  margin: 10px 0;
+}
+
+.form-fields{
+  padding: 5px;
+  margin-top: -20px;
+
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 96%;
+  padding: 8px;
+  border: 0.3px solid  grey;
+  margin-top: 4px;
+  background-color: #444;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.captured-image {
+  margin-left: 40px;
+  width: 460px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.submit{
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 30px;
+  border: none;
+}
